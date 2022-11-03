@@ -1,0 +1,277 @@
+{% extends 'baselayout.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+{% for unit in units %}
+<div class="card" style="width: 17rem; margin:17px; padding:17px;box-shadow:4px 8px purple;">
+  <ul class="list-group list-group-flush">
+<!--gf-->
+    <li class="list-group-item"> <a href="{% url 'getBuildings' buildings=unit.buildings  %}"> {{unit.buildings}}</a></li>
+       <li class="list-group-item"> <a href="{% url 'getLocations' location=unit.location  %}"> {{unit.location}}</a></li>
+    <li class="list-group-item"><a href="{% url 'getUnitTypes' unitTypes=unit.unitTypes  %}"> {{unit.unitTypes}}</a></li>
+      <li class="list-group-item"> <a href="{% url 'getDimensions' dimensions=unit.dimensions  %}"> {{unit.dimensions}}</a></li>
+    <li class="list-group-item"> <a href="#"> {{unit.priceRange}}</a></li>
+    <li class="list-group-item"><a href="{% url 'getAmenity' amenity=unit.amenity  %}"> {{unit.amenity}}</a></li>
+      <li class="list-group-item"><a href="{% url 'getUserType' userType=unit.userType  %}"> {{unit.userType}}</a></li>
+  </ul>
+  <div class="card-footer">
+    Card footer
+  </div>
+</div>
+
+{% endfor %}
+{% endblock %}
+<!--<div class="position-relative">-->
+                                                    <!--Image-->
+<!--    <div>-->
+<!--        <img class="w-100" style="height:15rem"-->
+<!--             src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014__340.jpg"/>-->
+<!--    </div>-->
+
+<!--                                                  &lt;!&ndash;Initial Filter&ndash;&gt;-->
+
+<!--    <div style="top: 10rem;width:50% !important; left: 0; right: 0; background: white"-->
+<!--         class="position-absolute w-100 mx-auto">-->
+<!--        <nav>-->
+<!--            <div class="nav nav-tabs" id="nav-tab" role="tablist">-->
+<!--                <button class="nav-link active" id="nav-home-tab" data-toggle="tab" data-target="#nav-home"-->
+<!--                        type="button" role="tab" aria-controls="nav-home" aria-selected="true">All-->
+<!--                </button>-->
+<!--                <button class="nav-link" id="nav-Self-Storage-tab" data-toggle="tab" data-target="#nav-profile"-->
+<!--                        type="button"-->
+<!--                        role="tab" aria-controls="nav-profile" aria-selected="false">Self Storage-->
+<!--                </button>-->
+<!--                <button class="nav-link" id="nav-contact-tab" data-toggle="tab" data-target="#nav-contact" type="button"-->
+<!--                        role="tab" aria-controls="nav-Office" aria-selected="false">Office Space-->
+<!--                </button>-->
+<!--                <button class="nav-link" id="nav-locker-tab" data-toggle="tab" data-target="#nav-contact" type="button"-->
+<!--                        role="tab" aria-controls="nav-Locker" aria-selected="false">Locker-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </nav>-->
+<!--        <div class="tab-content" id="nav-tabContent">-->
+<!--            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">-->
+<!--                hdrgshsen-->
+<!--            </div>-->
+<!--            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">-->
+<!--                <div>-->
+<!--                                                &lt;!&ndash;Dropdown&ndash;&gt;-->
+<!--                    <div class="dropdown">-->
+<!--                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"-->
+<!--                                aria-expanded="false">-->
+<!--                            Dropdown button-->
+<!--                        </button>-->
+<!--                        <div class="dropdown-menu">-->
+<!--                            <a class="dropdown-item" href="#">Action</a>-->
+<!--                            <a class="dropdown-item" href="#">Another action</a>-->
+<!--                            <a class="dropdown-item" href="#">Something else here</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker"-->
+<!--                         inline="true">-->
+<!--                        <input placeholder="Select date" type="text" id="example" class="form-control">-->
+<!--                        <label for="example">Try me...</label>-->
+<!--                        <i class="fas fa-calendar input-prefix"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div></div>-->
+<!--            </div>-->
+<!--            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">thretjhtheth-->
+<!--            </div>-->
+<!--        </div>-->
+<!--                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="myNavBar">-->
+<!--                    <span class="navbar-toggle-icon"></span>-->
+<!--                </button>-->
+<!--                <div style="background-color: #FFF410; color:#410b5f; font-weight:700; display:flex; width:50%; justify-content-center"-->
+<!--                     class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">-->
+
+<!--                    <div class="row" >-->
+<!--                        <div class="col-12 " >-->
+<!--                            <ul  style="color:#410b5f;" class="navbar-nav ml-auto ">-->
+<!--                                <li class="nav-item active">-->
+<!--                                    <a style="color:#410b5f" class="nav-link" href="#">Home </a>-->
+<!--                                </li>-->
+<!--                                <li style="color:#410b5f" class="nav-item">-->
+<!--                                    <a style="color:#410b5f" class="nav-link" href="#">About Us</a>-->
+<!--                                </li>-->
+<!--                                <li class="nav-item">-->
+<!--                                    <a style="color:#410b5f" class="nav-link" href="#">Business</a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row" >-->
+<!--                        <div class="col-12" >-->
+<!--                            <ul style="color:#410b5f" class="navbar-nav ml-auto">-->
+<!--                                <div class="col-md-4" >-->
+<!--                                <li class="nav-item active">-->
+<!--                                    <a style="color:#410b5f" class="nav-link" href="#">Home </a>-->
+<!--                                </li></div>-->
+<!--                                    <div class="col-md-4" >-->
+<!--                                <li style="color:#410b5f" class="nav-item">-->
+<!--                                    <a style="color:#410b5f" class="nav-link" href="#">About Us</a>-->
+<!--                                </li></div>-->
+<!--                                        <div class="col-md-4">-->
+<!--                                <li class="nav-item">-->
+<!--                                    <a style="color:#410b5f" class="nav-link" href="#">Business</a>-->
+<!--                                </li></div>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--    </div>-->
+<!--</div>-->
+
+
+
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class="col-md-2">-->
+<!--            <div class="mt-5">-->
+<!--                <div class="mt-5"> icon filter</div>-->
+<!--                <div>-->
+
+                    <!--Accordion-->
+<!--&ndash;&gt;-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header" id="headingTwo">-->
+<!--                                <h2 class="mb-0">-->
+<!--                                    <button class="btn btn-link btn-block text-left collapsed" type="button"-->
+<!--                                            data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"-->
+<!--                                            aria-controls="collapseTwo">-->
+<!--                                        Collapsible Group Item #2-->
+<!--                                    </button>-->
+<!--                                </h2>-->
+<!--                    <div class="accordion" id="accordionExample">-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header" id="headingOne">-->
+<!--                                <h2 class="mb-0">-->
+<!--                                    <button class="btn btn-link btn-block text-left" type="button"-->
+<!--                                            data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"-->
+<!--                                            aria-controls="collapseOne">-->
+<!--                                        Collapsible Group Item #1-->
+<!--                                    </button>-->
+<!--                                </h2>-->
+<!--                            </div>-->
+
+<!--                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"-->
+<!--                                 data-parent="#accordionExample">-->
+<!--                                <div class="card-body">-->
+<!--                                    Some placeholder content for the first accordion panel. This panel is shown by-->
+<!--                                    default, thanks to the <code>.show</code> class.
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                 data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Some placeholder content for the second accordion panel. This panel is hidden by
+                                    default.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed" type="button"
+                                            data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                        Collapsible Group Item #3
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                 data-parent="#accordionExample">
+                                <div class="card-body">
+                                    And lastly, the placeholder content for the third and final accordion panel. This
+                                    panel is hidden by default.
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="card">
+                            <div class="card-header" id="headingFour">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed" type="button"
+                                            data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                        Collapsible Group Item #4
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                 data-parent="#accordionExample">
+                                <div class="card-body">
+                                    And lastly, the placeholder content for the third and final accordion panel. This
+                                    panel is hidden by default.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="headingFive">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed" type="button"
+                                            data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                        Collapsible Group Item #5
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                 data-parent="#accordionExample">
+                                <div class="card-body">
+                                    And lastly, the placeholder content for the third and final accordion panel. This
+                                    panel is hidden by default.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="headingSix">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed" type="button"
+                                            data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                        Collapsible Group Item #6
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                                 data-parent="#accordionExample">
+                                <div class="card-body">
+                                    And lastly, the placeholder content for the third and final accordion panel. This
+                                    panel is hidden by default.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-4">
+fgdfgdfg
+                </div>
+              <div class="col-md-4">-->
+
+<!--                </div>-->
+<!--                <div class="col-md-4">-->
+
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+

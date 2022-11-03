@@ -1,0 +1,26 @@
+{% extends 'baselayout.html' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+
+{% for unit in units %}
+<div class="card" style="width: 17rem; margin:17px; padding:17px;box-shadow:4px 8px purple;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{unit.location}}</li>
+        <li class="list-group-item">{{unit.buildings}}</li>
+        <li class="list-group-item">{{unit.unitTypes}}</li>
+        <li class="list-group-item">{{unit.dimensions}}</li>
+        <li class="list-group-item">{{unit.priceRange}}</li>
+        <li class="list-group-item">{{unit.amenity}}</li>
+         <li class="list-group-item"> {{unit.userType}}</li>
+    </ul>
+
+</div>
+
+{% endfor %}
+{% endblock %}
+<!--hffd-->

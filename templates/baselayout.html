@@ -1,0 +1,346 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>{% block title %} {% endblock %} </title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFFFFF; color:#410b5f; font-weight:700">
+    <a class="navbar-brand" href="{% url 'home' %}">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div style="background-color: #FFFFFF; color:#410b5f; font-weight:700" class="collapse navbar-collapse"
+         id="navbarSupportedContent">
+        <ul style="color:#410b5f; " class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a style="color:#410b5f" class="nav-link" href="#">Home </a>
+            </li>
+            <li style="color:#410b5f; " class="nav-item">
+                <a style="color:#410b5f" class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a style="color:#410b5f" class="nav-link" href="#">Business</a>
+            </li>
+            <li class="nav-item">
+                <a style="color:#410b5f" class="nav-link" href="#">How it works</a>
+            </li>
+            <li class="nav-item">
+                <a style="color:#410b5f" class="nav-link" href="#">Contact us</a>
+            </li>
+            <li class="nav-item">
+                <a style="color:#410b5f" class="nav-link" href="#">FAQ</a>
+            </li>
+            <li class="nav-item">
+                <a style="color:#410b5f" class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+                <a style="color:#410b5f" class="nav-link" href="#">Rent Now</a>
+            </li>
+            <li class="nav-item">
+                <a style="color:#410b5f" class="nav-link" href="#">Business Partners</a>
+            </li>
+            <li class="nav-item">
+                <button style="font-weight:700" class="nav-link btn-sm btn btn-warning text-white" href="#">Request A
+                    Quote
+                </button>
+
+        </ul>
+    </div>
+</nav>
+<div class="position-relative">
+
+    <!--Image-->
+    <div>
+        <img class="w-100" style="height:15rem"
+             src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014__340.jpg"/>
+    </div>
+
+    <!--Initial Filter-->
+
+         <div style="top: 10rem;width:50% !important; left: 0; right: 0; background: white"
+             class="position-absolute w-100 mx-auto">
+            <nav>
+                <div class="nav nav-tabs justify-content-center " id="nav-tab" role="tablist">
+<!--                   <a href="{% url 'home' %}">  <button class="nav-link active" id="nav-home-tab" data-toggle="tab" data-target="#nav-home"-->
+<!--                            type="button" role="tab" aria-controls="nav-home" aria-selected="true">All-->
+<!--                   </button></a>-->
+<!--                    <button class="nav-link" id="nav-Self-Storage-tab" data-toggle="tab" data-target="#nav-profile"-->
+<!--                            type="button"-->
+<!--                            role="tab" aria-controls="nav-profile" aria-selected="false">Self Storage-->
+<!--                    </button>-->
+                     <div class="dropdown">
+                                <button class="border-0 mt-2" type="button" data-toggle="dropdown"
+                                        aria-expanded="false">
+                                    Self Storage
+                                </button>
+                                <div class="dropdown-menu ">
+                                    <a class="dropdown-item" href="{% url 'getUserType' userType='Personal User' %}">Personal User</a>
+                                    <a class="dropdown-item" href="{% url 'getUserType' userType='Business User' %}">Business User</a>
+<!--                                    <a class="dropdown-item" href="#">Something else here</a>-->
+                                </div>
+                            </div>
+                    <button class="nav-link" id="nav-contact-tab" data-toggle="tab" data-target="#nav-contact" type="button"
+                            role="tab" aria-controls="nav-Office" aria-selected="false">Office Space
+                    </button>
+                    <button class="nav-link" id="nav-locker-tab" data-toggle="tab" data-target="#nav-contact" type="button"
+                            role="tab" aria-controls="nav-Locker" aria-selected="false">Locker
+                    </button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+                </div>
+<!--                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">-->
+<!--                    <div class="d-flex">-->
+<!--                        <div>-->
+<!--                            &lt;!&ndash;Dropdown&ndash;&gt;-->
+<!--                            <div class="dropdown">-->
+<!--                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"-->
+<!--                                        aria-expanded="false">-->
+<!--                                    Dropdown button-->
+<!--                                </button>-->
+<!--                                <div class="dropdown-menu ">-->
+<!--                                    <a class="dropdown-item" href="{% url 'getUserType' userType='Personal User' %}">Personal User</a>-->
+<!--                                    <a class="dropdown-item" href="{% url 'getUserType' userType='Business User' %}">Business User</a>-->
+<!--&lt;!&ndash;                                    <a class="dropdown-item" href="#">Something else here</a>&ndash;&gt;-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--&lt;!&ndash;                        <div>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <div class="dropdown-menu">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <span class="dropdown-item-text">Dropdown item text</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a class="dropdown-item" href="#">Action</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a class="dropdown-item" href="#">Another action</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a class="dropdown-item" href="#">Something else here</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                        <div>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <label for="moveInDate">Move In Date:</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <input type="date" id="moveInDate" name="moveInDate">&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                </div>-->
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">test
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--INITIAL FILTER ENDS-->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="mt-5">
+                    <div class="mt-5"> icon filter</div>
+                    <div>
+
+                        <!--Accordion-->
+
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left" type="button"
+                                                data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+                                                aria-controls="collapseOne">
+                                            Location
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                     data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li><a href="{% url 'getLocations' location='chennai'  %}">chennai</a></li>
+                                            <li><a href="{% url 'getLocations' location='Hyderabad' %}">Hyderabad</a>
+                                            </li>
+                                            <li><a href="{% url 'getLocations' location='delhi' %}">delhi</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button"
+                                                data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                                aria-controls="collapseTwo">
+                                            Buildings
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                     data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li><a href="{% url 'getBuildings' buildings='LIC' %}">LIC</a></li>
+                                            <li><a href="{% url 'getBuildings' buildings='WTC'  %}">WTC</a></li>
+                                            <li><a href="{% url 'getBuildings' buildings='Tumbler' %}">Tumbler</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button"
+                                                data-toggle="collapse" data-target="#collapseThree"
+                                                aria-expanded="false"
+                                                aria-controls="collapseThree">
+                                            Unit Type
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                     data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li><a href="{% url 'getUnitTypes' unitTypes='1000SQFT'  %}"> 1000sqft</a>
+                                            </li>
+                                            <li><a href="{% url 'getUnitTypes' unitTypes='2000SQFT'  %}"> 2000sqft</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" id="headingFour">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button"
+                                                data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                                                aria-controls="collapseThree">
+                                            Dimensions
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                     data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li><a href="{% url 'getDimensions' dimensions='LBH'  %}">LBH</a></li>
+                                            <li><a href="{% url 'getDimensions' dimensions='LB'  %}">LB</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" id="headingFive">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button"
+                                                data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
+                                                aria-controls="collapseThree">
+                                            AMENITY
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                     data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li><a href="{% url 'getAmenity' amenity='AC'  %}"> AC</a></li>
+                                            <li><a href="{% url 'getAmenity' amenity='Non AC' %}"> Non AC</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" id="headingSix">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button"
+                                                data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
+                                                aria-controls="collapseThree">
+                                            Price Range
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                                     data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        Price Range
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-10">
+                <div class="row mt-5">
+
+                    {% block content %}
+
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid bg-primary">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-md-3 ">LOGOOO</div>
+                <div class="col-md-1">Quick Links</div>
+
+                <div class="col-md-3">
+                    <ul style="list-style-type: none;">
+                        <li> Sizes and pricing</li>
+                        <li> Help Center</li>
+                        <li> AR - EN</li>
+                        <li> LOGIN</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-1">Contact-us Through</div>
+                <div class="col-md-3">
+                    <ul style="list-style-type: none;">
+                        <li> As Suly District Istanbul St. Saudi Arabia, Riyadh 5813</li>
+                        <li>hello@makhzny.com</li>
+                        <li>+966 54 593 3222</li>
+                    </ul>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"> copyrights @2022 Makhzny for self-storage</div>
+                <div class="col-md-2" style="margin-left: -10px"> Privacy Policy</div>
+                <div class="col-md-2"> Terms & conditions</div>
+                <div class="col-md-2"></div>
+                <div class="col-md-2"> icons icons icons icons</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+            integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+            crossorigin="anonymous"></script>
+
+</body>
+</html>
